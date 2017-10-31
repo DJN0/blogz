@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>{{tab_title}}</title>
+    </head>
+
+    <header>
+  <div style='float: left'>
+            <a href="/" class="link">Home Page | </a>
+            <a href="/blog" class="link">View All Posts | </a>
+      <a href="/new_entry" class="link">New Post | </a>
+        </div>
+  {% if 'email' in session %}
+    <div style='float: right'>
+      <a href='/logout'>Log Out</a>
+    </div>
+  {% else %}
+    <div style='float: right'>
+      <a href='/login'>Log In</a>
+      <a href='signup'>Sign Up</a>
+    </div>
+  {% endif %}
+    </header>
+
+    <br>
+    <hr />
+
+    <body>
+        
+        {% block body %}
+        {% endblock %}
+
+    </body>
+
+</html>

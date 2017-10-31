@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <h3>All Users:</h3>
+    <hr/>
+
+    {% if users|length == 0 %}
+
+        <p>No Users</p>
+
+    {% else %}
+
+        {% for each_user in users %}
+        
+            <a href="/blog?user={{each_user.email}}">{{each_user}}</a>
+            <hr/>
+        
+        {% endfor%}
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <h3>View User's Posts</h3>
+    <hr/>
+
+    {% if blog|length == 0 %}
+
+        <p>Nothing Posted</p>
+
+    {% else %}
+
+        {% for posts in blog %}
+            <h3><a href="/blog?user={{blog.id}}">{{posts.heading}}</a></h3>
+            <p>{{posts.content}}</p>
+            <p>Author:<a href="/blog?user={{entry.author.email}}">{{entry.author.email}}</a></p>
+            <hr />
+        {% endfor%}
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+<br>
+
+    <form action="/new_entry" method='POST'>
+        <label>Title:
+            <input type="text" name='heading' value="{{heading_input}}"/></label>
+        <p class="error">{{heading_error}}</p>
+
+        <br>
+
+        <label>Content:
+            <textarea type="text" name='content' value="{{content_input}}"></textarea></label>
+        <p class="error">{{content_error}}</p>
+
+        <br>
+
+        <input type="submit" value="Submit Post"/>
+        
+    </form>
+
+{% endblock %}

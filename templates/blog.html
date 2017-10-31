@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <h3>View All Posts:</h3>
+    <hr/>
+
+    {% if posts|length == 0 %}
+
+        <p>No Posts yet</p>
+
+    {% else %}
+
+        {% for entry in posts %}
+            <h1><a href="/blog?id={{entry.id}}">{{entry.heading}}</a></h1>
+            <p>{{entry.content}}</p>
+<p>User: <a href="/blog?user={{entry.user.email}}">{{entry.user.email}}</a></p>
+            <hr />
+        {% endfor %}
+       
+    {% endif %}
+
+{% endblock %}

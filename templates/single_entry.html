@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <h1>{{entry.heading}}</h1>
+
+    <p class="restrict_length">{{entry.content}}</p>
+
+    <p>User: <a href="/blog?user={{entry.user.email}}">{{entry.user.email}}</a></p>
+
+{% endblock %}
